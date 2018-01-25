@@ -1,9 +1,13 @@
-var http = require('http');
-var server = http.createServer();
-server.on('request', function(req, res){
-      res.writeHead(200, {'Content-Type':'text/html'});
-      res.write('<h1>Hello md world!</h1>');
-      res.end();
+var express = require('express');
+
+//Constants
+const PORT = 8080;
+
+//App
+var app = express();
+app.get('/', function(req, res){
+      res.send('Hello md world!\n');
 });
-server.listen(8080);
+
+app.listen(PORT);
 console.log('Server running on 8080');
