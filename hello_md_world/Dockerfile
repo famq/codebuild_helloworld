@@ -1,4 +1,4 @@
-FROM 882275506731.dkr.ecr.ap-northeast-1.amazonaws.com/md-analytics-amazon-linux-base:1.0
+FROM 882275506731.dkr.ecr.ap-northeast-1.amazonaws.com/analytics-engines-base:0.0.1
 
 RUN curl -sL https://rpm.nodesource.com/setup_6.x | bash - && \
     yum -y update && \
@@ -18,5 +18,5 @@ COPY app.js /usr/src/app
 
 EXPOSE 8080
 
-RUN npm start
+ENTRYPOINT [ "npm", "start" ]
 #CMD [ "npm"' "start" ]
